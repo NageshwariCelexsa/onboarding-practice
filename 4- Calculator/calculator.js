@@ -17,7 +17,7 @@ function calculate() {
     const first = parseFloat(previousNumber);
     const second = parseFloat(currentNumber);
 
-    switch (operator) {
+    switch(operator){
 
         case "+":
             return first + second;
@@ -30,187 +30,266 @@ function calculate() {
 
         case "÷":
 
-            if (second === 0) {
-                errorState = true;
+            if(second===0){
+                errorState=true;
                 return "Cannot divide by 0";
             }
 
-            return first / second;
+            return first/second;
     }
+
 }
 
-buttons.forEach(button => {
+function press(value){
 
-    button.addEventListener("click", () => {
+    if(errorState){
+        currentNumber="";
+        previousNumber="";
+        operator="";
+        expression="";
+        resultDisplayed=false;
+        errorState=false;
+    }
 
-        const value = button.textContent;
+    // CLEAR
 
-        if (errorState) {
-            currentNumber = "";
-            previousNumber = "";
-            operator = "";
-            expression = "";
-            resultDisplayed = false;
-            errorState = false;
+    if(value==="C"){
+
+        currentNumber="";
+        previousNumber="";
+        operator="";
+        expression="";
+        resultDisplayed=false;
+
+        updateDisplay("0");
+        return;
+    }
+
+    // NUMBER
+
+    if(!isNaN(value)){
+
+        if(resultDisplayed){
+
+            currentNumber="";
+            previousNumber="";
+            operator="";
+            expression="";
+            resultDisplayed=false;
+
         }
 
-        // CLEAR
+        currentNumber+=value;
 
-        if (value === "C") {
+        updateDisplay(expression+currentNumber);
 
-            currentNumber = "";
-            previousNumber = "";
-            operator = "";
-            expression = "";
-            resultDisplayed = false;
+        return;
+    }
 
-            updateDisplay("0");
-            return;
+    // DECIMAL
+
+    if(value==="."){
+
+        if(resultDisplayed){
+
+            currentNumber="0";
+            previousNumber="";
+            operator="";
+            expression="";
+            resultDisplayed=false;
+
         }
 
-        // NUMBER
+        if(!currentNumber.includes(".")){
 
-        if (!isNaN(value)) {
-
-            if (resultDisplayed) {
-
-                currentNumber = "";
-                previousNumber = "";
-                operator = "";
-                expression = "";
-                resultDisplayed = false;
+            if(currentNumber===""){
+                currentNumber="0";
             }
 
-            currentNumber += value;
+            currentNumber+=".";
 
-            updateDisplay(expression + currentNumber);
-            return;
         }
 
-        // DECIMAL
+        updateDisplay(expression+currentNumber);
 
-        if (value === ".") {
+        return;
+    }
 
-            if (resultDisplayed) {
+    // OPERATOR
 
-                currentNumber = "0";
-                previousNumber = "";
-                operator = "";
-                expression = "";
-                resultDisplayed = false;
-            }
+    if(["+","−","×","÷"].includes(value)){
 
-            if (!currentNumber.includes(".")) {
+        // Allow + or - as first input
 
-                if (currentNumber === "") {
-                    currentNumber = "0";
-                }
+        if(previousNumber==="" && currentNumber===""){
 
-                currentNumber += ".";
-            }
+            if(value==="+" || value==="−"){
 
-            updateDisplay(expression + currentNumber);
-            return;
-        }
-
-        // OPERATOR
-
-        if (["+","−","×","÷"].includes(value)) {
-
-            // Don't allow starting with × or ÷
-            if (previousNumber === "" && currentNumber === "") {
-
-                if (value === "+" || value === "−") {
-                    return;
-                }
-
-                return;
-            }
-
-            // Continue after result
-            if (resultDisplayed) {
-
-                previousNumber = currentNumber;
-                expression = currentNumber + value;
-                operator = value;
-                currentNumber = "";
-                resultDisplayed = false;
-
-                updateDisplay(expression);
-                return;
-            }
-
-            // Replace operator if pressed twice
-            if (currentNumber === "" && operator !== "") {
-
-                operator = value;
-
-                expression = expression.slice(0,-1) + value;
+                previousNumber="0";
+                operator=value;
+                expression="0"+value;
 
                 updateDisplay(expression);
 
-                return;
             }
 
-            if (previousNumber !== "" && currentNumber !== "") {
+            return;
+        }
 
-                const result = calculate();
+        // Continue after result
 
-                if (errorState) {
-                    updateDisplay(result);
-                    return;
-                }
+        if(resultDisplayed){
 
-                previousNumber = result.toString();
-
-                expression = previousNumber + value;
-
-                currentNumber = "";
-
-                operator = value;
-
-                updateDisplay(expression);
-
-                return;
-            }
-
-            previousNumber = currentNumber;
-            operator = value;
-            expression = currentNumber + value;
-            currentNumber = "";
+            previousNumber=currentNumber;
+            currentNumber="";
+            operator=value;
+            expression=previousNumber+value;
+            resultDisplayed=false;
 
             updateDisplay(expression);
 
             return;
         }
 
-        // EQUALS
+        // Replace operator
 
-        if (value === "=") {
+        if(currentNumber==="" && operator!==""){
 
-            if (previousNumber === "" || currentNumber === "") {
+            operator=value;
+
+            expression=expression.slice(0,-1)+value;
+
+            updateDisplay(expression);
+
+            return;
+
+        }
+
+        // Calculate continuously
+
+        if(previousNumber!=="" && currentNumber!==""){
+
+            const result=calculate();
+
+            if(errorState){
+
+                updateDisplay(result);
+
                 return;
-            }
-
-            const fullExpression = expression + currentNumber;
-
-            const result = calculate();
-
-            updateDisplay(fullExpression + " = " + result);
-
-            if (!errorState) {
-
-                currentNumber = result.toString();
-                previousNumber = "";
-                operator = "";
-                expression = "";
-                resultDisplayed = true;
 
             }
+
+            previousNumber=result.toString();
+            currentNumber="";
+            operator=value;
+            expression=previousNumber+value;
+
+            updateDisplay(expression);
 
             return;
         }
 
+        previousNumber=currentNumber;
+        currentNumber="";
+        operator=value;
+        expression=previousNumber+value;
+
+        updateDisplay(expression);
+
+        return;
+
+    }
+
+    // EQUALS
+
+    if(value==="="){
+
+        if(previousNumber==="" || currentNumber==="")
+            return;
+
+        const fullExpression=expression+currentNumber;
+
+        const result=calculate();
+
+        updateDisplay(fullExpression+" = "+result);
+
+        if(!errorState){
+
+            currentNumber=result.toString();
+            previousNumber="";
+            operator="";
+            expression="";
+            resultDisplayed=true;
+
+        }
+
+        return;
+
+    }
+
+}
+
+buttons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        press(button.textContent);
+
     });
+
+});
+
+
+// Keyboard Support
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key>='0' && e.key<='9'){
+        press(e.key);
+    }
+
+    if(e.key==="."){
+        press(".");
+    }
+
+    if(e.key==="+"){
+        press("+");
+    }
+
+    if(e.key==="-" ){
+        press("−");
+    }
+
+    if(e.key==="*"){
+        press("×");
+    }
+
+    if(e.key==="/"){
+        e.preventDefault();
+        press("÷");
+    }
+
+    if(e.key==="Enter"){
+        press("=");
+    }
+
+    if(e.key==="Escape"){
+        press("C");
+    }
+
+    if(e.key==="Backspace"){
+
+        if(resultDisplayed)
+            return;
+
+        if(currentNumber!==""){
+
+            currentNumber=currentNumber.slice(0,-1);
+
+            updateDisplay(expression+currentNumber);
+
+        }
+
+    }
 
 });
