@@ -51,8 +51,6 @@ function press(value){
         errorState=false;
     }
 
-    // CLEAR
-
     if(value==="C"){
 
         currentNumber="";
@@ -64,8 +62,6 @@ function press(value){
         updateDisplay("0");
         return;
     }
-
-    // NUMBER
 
     if(!isNaN(value)){
 
@@ -85,8 +81,6 @@ function press(value){
 
         return;
     }
-
-    // DECIMAL
 
     if(value==="."){
 
@@ -115,11 +109,7 @@ function press(value){
         return;
     }
 
-    // OPERATOR
-
     if(["+","−","×","÷"].includes(value)){
-
-        // Allow + or - as first input
 
         if(previousNumber==="" && currentNumber===""){
 
@@ -136,8 +126,6 @@ function press(value){
             return;
         }
 
-        // Continue after result
-
         if(resultDisplayed){
 
             previousNumber=currentNumber;
@@ -151,8 +139,6 @@ function press(value){
             return;
         }
 
-        // Replace operator
-
         if(currentNumber==="" && operator!==""){
 
             operator=value;
@@ -164,8 +150,6 @@ function press(value){
             return;
 
         }
-
-        // Calculate continuously
 
         if(previousNumber!=="" && currentNumber!==""){
 
@@ -199,8 +183,6 @@ function press(value){
         return;
 
     }
-
-    // EQUALS
 
     if(value==="="){
 
@@ -239,8 +221,6 @@ buttons.forEach(button=>{
 
 });
 
-
-// Keyboard Support
 
 document.addEventListener("keydown",(e)=>{
 
