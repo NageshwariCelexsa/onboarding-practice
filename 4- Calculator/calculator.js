@@ -4,18 +4,20 @@ const buttons = document.querySelectorAll("button");
 let currentNumber = "";
 let previousNumber = "";
 let operator = "";
+let expression = "";
+let resultDisplayed = false;
 let errorState = false;
 
-function updateDisplay(value) {
-    display.value = value;
+function updateDisplay(text) {
+    display.value = text || "0";
 }
 
 function calculate() {
 
-    let first = parseFloat(previousNumber);
-    let second = parseFloat(currentNumber);
+    const first = parseFloat(previousNumber);
+    const second = parseFloat(currentNumber);
 
-    switch(operator){
+    switch (operator) {
 
         case "+":
             return first + second;
@@ -28,109 +30,185 @@ function calculate() {
 
         case "÷":
 
-            if(second === 0){
+            if (second === 0) {
                 errorState = true;
                 return "Cannot divide by 0";
             }
 
             return first / second;
     }
-
 }
 
 buttons.forEach(button => {
 
-    button.addEventListener("click", function(){
+    button.addEventListener("click", () => {
 
         const value = button.textContent;
 
-        if(errorState){
+        if (errorState) {
             currentNumber = "";
             previousNumber = "";
             operator = "";
+            expression = "";
+            resultDisplayed = false;
             errorState = false;
         }
 
-        // Clear
+        // CLEAR
 
-        if(value === "C"){
+        if (value === "C") {
+
             currentNumber = "";
             previousNumber = "";
             operator = "";
+            expression = "";
+            resultDisplayed = false;
+
             updateDisplay("0");
             return;
         }
 
-        // Numbers
+        // NUMBER
 
-        if(!isNaN(value)){
+        if (!isNaN(value)) {
+
+            if (resultDisplayed) {
+
+                currentNumber = "";
+                previousNumber = "";
+                operator = "";
+                expression = "";
+                resultDisplayed = false;
+            }
 
             currentNumber += value;
-            updateDisplay(currentNumber);
+
+            updateDisplay(expression + currentNumber);
             return;
         }
 
-        // Decimal
+        // DECIMAL
 
-        if(value === "."){
+        if (value === ".") {
 
-            if(!currentNumber.includes(".")){
-                if(currentNumber === ""){
+            if (resultDisplayed) {
+
+                currentNumber = "0";
+                previousNumber = "";
+                operator = "";
+                expression = "";
+                resultDisplayed = false;
+            }
+
+            if (!currentNumber.includes(".")) {
+
+                if (currentNumber === "") {
                     currentNumber = "0";
                 }
 
                 currentNumber += ".";
             }
 
-            updateDisplay(currentNumber);
+            updateDisplay(expression + currentNumber);
             return;
         }
 
-        // Operators
+        // OPERATOR
 
-        if(["+","−","×","÷"].includes(value)){
+        if (["+","−","×","÷"].includes(value)) {
 
-            if(previousNumber !== "" && currentNumber !== ""){
+            // Don't allow starting with × or ÷
+            if (previousNumber === "" && currentNumber === "") {
+
+                if (value === "+" || value === "−") {
+                    return;
+                }
+
+                return;
+            }
+
+            // Continue after result
+            if (resultDisplayed) {
+
+                previousNumber = currentNumber;
+                expression = currentNumber + value;
+                operator = value;
+                currentNumber = "";
+                resultDisplayed = false;
+
+                updateDisplay(expression);
+                return;
+            }
+
+            // Replace operator if pressed twice
+            if (currentNumber === "" && operator !== "") {
+
+                operator = value;
+
+                expression = expression.slice(0,-1) + value;
+
+                updateDisplay(expression);
+
+                return;
+            }
+
+            if (previousNumber !== "" && currentNumber !== "") {
 
                 const result = calculate();
 
-                if(errorState){
+                if (errorState) {
                     updateDisplay(result);
                     return;
                 }
 
                 previousNumber = result.toString();
-                updateDisplay(previousNumber);
 
-            }else{
+                expression = previousNumber + value;
 
-                previousNumber = currentNumber;
+                currentNumber = "";
 
-            }
+                operator = value;
 
-            currentNumber = "";
-            operator = value;
-            return;
-        }
+                updateDisplay(expression);
 
-        // Equals
-
-        if(value === "="){
-
-            if(previousNumber === "" || currentNumber === ""){
                 return;
             }
 
+            previousNumber = currentNumber;
+            operator = value;
+            expression = currentNumber + value;
+            currentNumber = "";
+
+            updateDisplay(expression);
+
+            return;
+        }
+
+        // EQUALS
+
+        if (value === "=") {
+
+            if (previousNumber === "" || currentNumber === "") {
+                return;
+            }
+
+            const fullExpression = expression + currentNumber;
+
             const result = calculate();
 
-            updateDisplay(result);
+            updateDisplay(fullExpression + " = " + result);
 
-            if(!errorState){
+            if (!errorState) {
+
                 currentNumber = result.toString();
                 previousNumber = "";
                 operator = "";
+                expression = "";
+                resultDisplayed = true;
+
             }
 
+            return;
         }
 
     });
