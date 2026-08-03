@@ -1,36 +1,105 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="_5__Login_Page.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"
+    CodeFile="Login.aspx.cs"
+    Inherits="_5__Login_Page.Login"
+    UnobtrusiveValidationMode="None" %>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
-    <title></title>
+    <title>Login</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f4f4f4;
+        }
+
+        .login-box{
+            width:320px;
+            margin:100px auto;
+            background:white;
+            padding:20px;
+            border-radius:6px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:5px;
+        }
+
+        .btn{
+            width:100%;
+            padding:10px;
+        }
+
+        .error{
+            color:red;
+        }
+
+        .success{
+            color:green;
+        }
+    </style>
+
 </head>
+
 <body>
-    <form id="form1" runat="server">
-    <div style="width:350px; margin:100px auto; padding:20px; border:1px solid #ccc; border-radius:8px;">
 
-        <h2>Login</h2>
+<form id="form1" runat="server">
 
-        <asp:Label ID="lblUsername" runat="server" Text="Username"></asp:Label>
-        <br />
-        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
-        <br /><br />
+<div class="login-box">
 
-        <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-        <br />
-        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-        <br /><br />
+<h2>Login</h2>
 
-        <asp:Button ID="btnLogin" runat="server"
-            Text="Login"
-            OnClick="btnLogin_Click" />
+Username
 
-        <br /><br />
+<asp:TextBox ID="txtUsername" runat="server"> </asp:TextBox>
 
-        <asp:Label ID="lblMessage" runat="server" Font-Bold="true"></asp:Label>
+<asp:RequiredFieldValidator ID="rfvUser" runat="server" ControlToValidate="txtUsername" ErrorMessage="Username required"
+CssClass="error" Display="Dynamic"> </asp:RequiredFieldValidator>
 
-    </div>
+<br /><br />
+
+Password
+
+<asp:TextBox
+ID="txtPassword"
+runat="server"
+TextMode="Password">
+</asp:TextBox>
+
+<asp:RequiredFieldValidator
+ID="rfvPassword"
+runat="server"
+ControlToValidate="txtPassword"
+ErrorMessage="Password required"
+CssClass="error"
+Display="Dynamic">
+</asp:RequiredFieldValidator>
+
+<br /><br />
+
+<asp:Button
+ID="btnLogin"
+runat="server"
+Text="Login"
+CssClass="btn"
+OnClick="btnLogin_Click" />
+
+<br /><br />
+
+<asp:Label
+ID="lblMessage"
+runat="server">
+</asp:Label>
+
+</div>
+
 </form>
+
 </body>
 </html>

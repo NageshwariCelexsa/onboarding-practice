@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|d:\\celexsa\\projects\\onboarding-practice\\5- login page\\5- login page\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{CE79E1CF-503D-039A-5543-6C3FC2E8F025}|5- Login Page\\5- Login Page.csproj|d:\\celexsa\\projects\\onboarding-practice\\5- login page\\5- login page\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{CE79E1CF-503D-039A-5543-6C3FC2E8F025}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|d:\\celexsa\\projects\\onboarding-practice\\5- login page\\5- login page\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{CE79E1CF-503D-039A-5543-6C3FC2E8F025}|5- Login Page\\5- Login Page.csproj|d:\\celexsa\\projects\\onboarding-practice\\5- login page\\5- login page\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE79E1CF-503D-039A-5543-6C3FC2E8F025}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|d:\\celexsa\\projects\\onboarding-practice\\5- login page\\5- login page\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE79E1CF-503D-039A-5543-6C3FC2E8F025}|5- Login Page\\5- Login Page.csproj|d:\\celexsa\\projects\\onboarding-practice\\5- login page\\5- login page\\login.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE79E1CF-503D-039A-5543-6C3FC2E8F025}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\login.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- login page\\login.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\login.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- login page\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{FC87F8F0-3E69-4683-BEFC-C45EA7752FDE}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{CE79E1CF-503D-039A-5543-6C3FC2E8F025}|5- Login Page\\5- Login Page.csproj|d:\\celexsa\\projects\\onboarding-practice\\5- login page\\5- login page\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CE79E1CF-503D-039A-5543-6C3FC2E8F025}|5- Login Page\\5- Login Page.csproj|solutionrelative:5- login page\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,49 +26,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "README.md",
-              "DocumentMoniker": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\README.md",
-              "RelativeDocumentMoniker": "5- Login Page\\README.md",
-              "ToolTip": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\README.md",
-              "RelativeToolTip": "5- Login Page\\README.md",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAAAGEAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-08-01T11:41:41.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Web.config",
-              "DocumentMoniker": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Web.config",
-              "RelativeDocumentMoniker": "5- Login Page\\Web.config",
-              "ToolTip": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Web.config",
-              "RelativeToolTip": "5- Login Page\\Web.config",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAACwAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-08-01T11:34:28.027Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Login.aspx.designer.cs",
               "DocumentMoniker": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Login.aspx.designer.cs",
               "RelativeDocumentMoniker": "5- Login Page\\Login.aspx.designer.cs",
               "ToolTip": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Login.aspx.designer.cs",
               "RelativeToolTip": "5- Login Page\\Login.aspx.designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-01T11:16:25.736Z"
+              "WhenOpened": "2026-08-03T05:30:49.76Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "5- Login Page\\Login.aspx.cs",
+              "ToolTip": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Login.aspx.cs",
+              "RelativeToolTip": "5- Login Page\\Login.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T05:16:21.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Login.aspx",
               "DocumentMoniker": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Login.aspx",
               "RelativeDocumentMoniker": "5- Login Page\\Login.aspx",
@@ -80,19 +64,20 @@
               "RelativeToolTip": "5- Login Page\\Login.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-08-01T11:07:56.51Z"
+              "WhenOpened": "2026-08-03T05:15:44.3Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.aspx.cs",
-              "DocumentMoniker": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Login.aspx.cs",
-              "RelativeDocumentMoniker": "5- Login Page\\Login.aspx.cs",
-              "ToolTip": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Login.aspx.cs",
-              "RelativeToolTip": "5- Login Page\\Login.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-01T11:09:48.468Z",
+              "DocumentIndex": 3,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Web.config",
+              "RelativeDocumentMoniker": "5- Login Page\\Web.config",
+              "ToolTip": "D:\\Celexsa\\Projects\\onboarding-practice\\5- Login Page\\5- Login Page\\Web.config",
+              "RelativeToolTip": "5- Login Page\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-08-03T05:16:30.107Z",
               "EditorCaption": ""
             }
           ]
