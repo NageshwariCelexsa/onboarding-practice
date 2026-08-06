@@ -1,0 +1,19 @@
+CREATE DATABASE InternTraining;
+GO
+
+USE InternTraining;
+GO
+
+CREATE TABLE Employees
+(
+    EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
+    EmployeeName NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(150) NOT NULL UNIQUE,
+    Position NVARCHAR(100) NOT NULL,
+    Department NVARCHAR(100) NOT NULL,
+    HireDate DATE NOT NULL,
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE()
+);
+GO
+
+SELECT * FROM Employees;
